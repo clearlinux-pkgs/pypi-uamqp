@@ -4,23 +4,52 @@
 #
 Name     : uamqp
 Version  : 1.1.0
-Release  : 2
+Release  : 3
 URL      : https://files.pythonhosted.org/packages/b6/03/5c442ec0cc03f3b3ad7488c1b7d770714d68816c4f44e7a44aff5538f119/uamqp-1.1.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/b6/03/5c442ec0cc03f3b3ad7488c1b7d770714d68816c4f44e7a44aff5538f119/uamqp-1.1.0.tar.gz
 Summary  : AMQP 1.0 Client Library for Python
 Group    : Development/Tools
 License  : MIT
+Requires: uamqp-license = %{version}-%{release}
+Requires: uamqp-python = %{version}-%{release}
+Requires: uamqp-python3 = %{version}-%{release}
 Requires: certifi
 Requires: enum34
-Requires: six
 BuildRequires : buildreq-cmake
 BuildRequires : buildreq-distutils3
 BuildRequires : certifi
+BuildRequires : enum34
 BuildRequires : openssl-dev
-BuildRequires : six
+BuildRequires : python3-dev
 
 %description
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+================
+
+%package license
+Summary: license components for the uamqp package.
+Group: Default
+
+%description license
+license components for the uamqp package.
+
+
+%package python
+Summary: python components for the uamqp package.
+Group: Default
+Requires: uamqp-python3 = %{version}-%{release}
+
+%description python
+python components for the uamqp package.
+
+
+%package python3
+Summary: python3 components for the uamqp package.
+Group: Default
+Requires: python3-core
+
+%description python3
+python3 components for the uamqp package.
+
 
 %prep
 %setup -q -n uamqp-1.1.0
@@ -30,11 +59,20 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1547844715
+export SOURCE_DATE_EPOCH=1559970362
+export GCC_IGNORE_WERROR=1
+export AR=gcc-ar
+export RANLIB=gcc-ranlib
+export NM=gcc-nm
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
 %install
+export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/uamqp
 cp src/vendor/azure-uamqp-c/LICENSE %{buildroot}/usr/share/package-licenses/uamqp/src_vendor_azure-uamqp-c_LICENSE
@@ -50,3 +88,19 @@ echo ----[ mark ]----
 
 %files
 %defattr(-,root,root,-)
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/uamqp/src_vendor_azure-uamqp-c_LICENSE
+/usr/share/package-licenses/uamqp/src_vendor_azure-uamqp-c_build_all_packaging_linux_debian_copyright
+/usr/share/package-licenses/uamqp/src_vendor_azure-uamqp-c_deps_azure-c-shared-utility_LICENSE
+/usr/share/package-licenses/uamqp/src_vendor_azure-uamqp-c_deps_azure-c-shared-utility_build_all_packaging_linux_debian_copyright
+/usr/share/package-licenses/uamqp/src_vendor_azure-uamqp-c_deps_azure-c-shared-utility_testtools_ctest_LICENSE
+/usr/share/package-licenses/uamqp/src_vendor_azure-uamqp-c_deps_azure-c-shared-utility_testtools_umock-c_deps_ctest_LICENSE
+
+%files python
+%defattr(-,root,root,-)
+
+%files python3
+%defattr(-,root,root,-)
+/usr/lib/python3*/*
