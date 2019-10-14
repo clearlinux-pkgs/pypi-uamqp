@@ -4,7 +4,7 @@
 #
 Name     : uamqp
 Version  : 1.2.3
-Release  : 6
+Release  : 7
 URL      : https://files.pythonhosted.org/packages/c1/5d/82c2b27c003aae45aa079c6f7ad4b59e0c7ce53652fad39fd90cb35994f1/uamqp-1.2.3.tar.gz
 Source0  : https://files.pythonhosted.org/packages/c1/5d/82c2b27c003aae45aa079c6f7ad4b59e0c7ce53652fad39fd90cb35994f1/uamqp-1.2.3.tar.gz
 Summary  : AMQP 1.0 Client Library for Python
@@ -14,18 +14,16 @@ Requires: uamqp-license = %{version}-%{release}
 Requires: uamqp-python = %{version}-%{release}
 Requires: uamqp-python3 = %{version}-%{release}
 Requires: certifi
-Requires: enum34
 Requires: six
 BuildRequires : buildreq-cmake
 BuildRequires : buildreq-distutils3
 BuildRequires : certifi
-BuildRequires : enum34
 BuildRequires : openssl-dev
 BuildRequires : python3-dev
 BuildRequires : six
 
 %description
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+================
 
 %package license
 Summary: license components for the uamqp package.
@@ -61,8 +59,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1570907544
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1571088744
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -78,11 +75,11 @@ python3 setup.py build
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/uamqp
-cp src/vendor/azure-uamqp-c/LICENSE %{buildroot}/usr/share/package-licenses/uamqp/src_vendor_azure-uamqp-c_LICENSE
-cp src/vendor/azure-uamqp-c/build_all/packaging/linux/debian/copyright %{buildroot}/usr/share/package-licenses/uamqp/src_vendor_azure-uamqp-c_build_all_packaging_linux_debian_copyright
-cp src/vendor/azure-uamqp-c/deps/azure-c-shared-utility/LICENSE %{buildroot}/usr/share/package-licenses/uamqp/src_vendor_azure-uamqp-c_deps_azure-c-shared-utility_LICENSE
-cp src/vendor/azure-uamqp-c/deps/azure-c-shared-utility/build_all/packaging/linux/debian/copyright %{buildroot}/usr/share/package-licenses/uamqp/src_vendor_azure-uamqp-c_deps_azure-c-shared-utility_build_all_packaging_linux_debian_copyright
-cp src/vendor/azure-uamqp-c/deps/azure-c-shared-utility/testtools/ctest/LICENSE %{buildroot}/usr/share/package-licenses/uamqp/src_vendor_azure-uamqp-c_deps_azure-c-shared-utility_testtools_ctest_LICENSE
+cp %{_builddir}/uamqp-1.2.3/src/vendor/azure-uamqp-c/LICENSE %{buildroot}/usr/share/package-licenses/uamqp/47e4690f60befa1918e5ac38723973fe4cf04e9b
+cp %{_builddir}/uamqp-1.2.3/src/vendor/azure-uamqp-c/build_all/packaging/linux/debian/copyright %{buildroot}/usr/share/package-licenses/uamqp/fcd11f2e53968b872b48efbb6cf2a18c5a0d04e5
+cp %{_builddir}/uamqp-1.2.3/src/vendor/azure-uamqp-c/deps/azure-c-shared-utility/LICENSE %{buildroot}/usr/share/package-licenses/uamqp/47e4690f60befa1918e5ac38723973fe4cf04e9b
+cp %{_builddir}/uamqp-1.2.3/src/vendor/azure-uamqp-c/deps/azure-c-shared-utility/build_all/packaging/linux/debian/copyright %{buildroot}/usr/share/package-licenses/uamqp/b936129838be63462c2583bfd059d8736f39ab87
+cp %{_builddir}/uamqp-1.2.3/src/vendor/azure-uamqp-c/deps/azure-c-shared-utility/testtools/ctest/LICENSE %{buildroot}/usr/share/package-licenses/uamqp/47e4690f60befa1918e5ac38723973fe4cf04e9b
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -93,11 +90,9 @@ echo ----[ mark ]----
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/uamqp/src_vendor_azure-uamqp-c_LICENSE
-/usr/share/package-licenses/uamqp/src_vendor_azure-uamqp-c_build_all_packaging_linux_debian_copyright
-/usr/share/package-licenses/uamqp/src_vendor_azure-uamqp-c_deps_azure-c-shared-utility_LICENSE
-/usr/share/package-licenses/uamqp/src_vendor_azure-uamqp-c_deps_azure-c-shared-utility_build_all_packaging_linux_debian_copyright
-/usr/share/package-licenses/uamqp/src_vendor_azure-uamqp-c_deps_azure-c-shared-utility_testtools_ctest_LICENSE
+/usr/share/package-licenses/uamqp/47e4690f60befa1918e5ac38723973fe4cf04e9b
+/usr/share/package-licenses/uamqp/b936129838be63462c2583bfd059d8736f39ab87
+/usr/share/package-licenses/uamqp/fcd11f2e53968b872b48efbb6cf2a18c5a0d04e5
 
 %files python
 %defattr(-,root,root,-)
