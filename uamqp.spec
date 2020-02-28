@@ -4,7 +4,7 @@
 #
 Name     : uamqp
 Version  : 1.2.6
-Release  : 12
+Release  : 13
 URL      : https://files.pythonhosted.org/packages/0b/71/2c568bf3998187e23859f9f9f067b761e99ccec1739bcd0ffd9b8a76ed0e/uamqp-1.2.6.tar.gz
 Source0  : https://files.pythonhosted.org/packages/0b/71/2c568bf3998187e23859f9f9f067b761e99ccec1739bcd0ffd9b8a76ed0e/uamqp-1.2.6.tar.gz
 Summary  : AMQP 1.0 Client Library for Python
@@ -46,6 +46,7 @@ python components for the uamqp package.
 Summary: python3 components for the uamqp package.
 Group: Default
 Requires: python3-core
+Provides: pypi(uamqp)
 
 %description python3
 python3 components for the uamqp package.
@@ -60,7 +61,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1581701131
+export SOURCE_DATE_EPOCH=1582907466
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
