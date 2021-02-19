@@ -4,7 +4,7 @@
 #
 Name     : uamqp
 Version  : 1.2.14
-Release  : 26
+Release  : 27
 URL      : https://files.pythonhosted.org/packages/f9/0a/08c54f1c26aebdc650fe539dee0978fc666dfd588680c4ecf1b45f01a54e/uamqp-1.2.14.tar.gz
 Source0  : https://files.pythonhosted.org/packages/f9/0a/08c54f1c26aebdc650fe539dee0978fc666dfd588680c4ecf1b45f01a54e/uamqp-1.2.14.tar.gz
 Summary  : AMQP 1.0 Client Library for Python
