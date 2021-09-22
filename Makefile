@@ -1,5 +1,5 @@
 PKG_NAME := uamqp
-URL = https://files.pythonhosted.org/packages/37/59/5a6bd3f3b3fc12273bb6a916d113f5054361e63f7042f0e53a6eaf2b93cb/uamqp-1.4.1.tar.gz
+URL = https://files.pythonhosted.org/packages/c7/c4/d40da67818edae90bd41edb4224be87635c44b2525b0f459989f00642c23/uamqp-1.4.2.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
