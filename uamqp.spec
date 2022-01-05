@@ -4,7 +4,7 @@
 #
 Name     : uamqp
 Version  : 1.4.3
-Release  : 41
+Release  : 42
 URL      : https://files.pythonhosted.org/packages/80/20/aed828baecb742acc2eb8b5a2e9849ce9dfdfdb74cca485c0617c4b5b4b8/uamqp-1.4.3.tar.gz
 Source0  : https://files.pythonhosted.org/packages/80/20/aed828baecb742acc2eb8b5a2e9849ce9dfdfdb74cca485c0617c4b5b4b8/uamqp-1.4.3.tar.gz
 Summary  : AMQP 1.0 Client Library for Python
@@ -13,14 +13,13 @@ License  : MIT
 Requires: uamqp-license = %{version}-%{release}
 Requires: uamqp-python = %{version}-%{release}
 Requires: uamqp-python3 = %{version}-%{release}
-Requires: certifi
 Requires: six
 BuildRequires : buildreq-cmake
 BuildRequires : buildreq-distutils3
-BuildRequires : certifi
 BuildRequires : openssl-dev
+BuildRequires : pypi(certifi)
+BuildRequires : pypi(six)
 BuildRequires : python3-dev
-BuildRequires : six
 
 %description
 ================
@@ -63,7 +62,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1633626070
+export SOURCE_DATE_EPOCH=1641421580
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
