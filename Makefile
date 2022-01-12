@@ -1,5 +1,5 @@
 PKG_NAME := pypi-uamqp
-URL = https://files.pythonhosted.org/packages/80/20/aed828baecb742acc2eb8b5a2e9849ce9dfdfdb74cca485c0617c4b5b4b8/uamqp-1.4.3.tar.gz
+URL = https://files.pythonhosted.org/packages/e7/7b/98cd98335eea1fd8568c413496621842a8b0017f06c706682af2937b55f5/uamqp-1.5.0.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
