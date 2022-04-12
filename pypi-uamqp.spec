@@ -4,7 +4,7 @@
 #
 Name     : pypi-uamqp
 Version  : 1.5.3
-Release  : 48
+Release  : 49
 URL      : https://files.pythonhosted.org/packages/b8/68/d13caa61398064a2f4aea5d3ea3cf78dc449eae9b0ebd5ad08c0f3d7c180/uamqp-1.5.3.tar.gz
 Source0  : https://files.pythonhosted.org/packages/b8/68/d13caa61398064a2f4aea5d3ea3cf78dc449eae9b0ebd5ad08c0f3d7c180/uamqp-1.5.3.tar.gz
 Summary  : AMQP 1.0 Client Library for Python
@@ -62,7 +62,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1648150682
+export SOURCE_DATE_EPOCH=1649790018
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
