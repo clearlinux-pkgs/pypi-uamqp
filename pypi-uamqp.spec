@@ -4,7 +4,7 @@
 #
 Name     : pypi-uamqp
 Version  : 1.6.0
-Release  : 54
+Release  : 55
 URL      : https://files.pythonhosted.org/packages/13/cd/46bf3d2a6464a254a25d63ac7c391728e6adda92ca1492568196ebb98f14/uamqp-1.6.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/13/cd/46bf3d2a6464a254a25d63ac7c391728e6adda92ca1492568196ebb98f14/uamqp-1.6.0.tar.gz
 Summary  : AMQP 1.0 Client Library for Python
